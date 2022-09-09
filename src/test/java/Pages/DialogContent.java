@@ -38,6 +38,9 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     private WebElement nameInput;
 
+    @FindBy(xpath = "(//span[contains(text(),'Stage')])[3]")
+    private WebElement stage;
+
     @FindBy(xpath = "//ms-save-button//button")
     private WebElement saveButton;
 
@@ -54,6 +57,11 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//ms-delete-button//button)[1]")
     private WebElement deleteButton;
 
+    @FindBy(xpath = "(//mat-pseudo-checkbox[@class='mat-pseudo-checkbox mat-option-pseudo-checkbox ng-star-inserted'])[5]")
+    private WebElement stageSlct;
+
+
+    //(//mat-pseudo-checkbox[@class='mat-pseudo-checkbox mat-option-pseudo-checkbox ng-star-inserted'])[1]
     //4 ncü giriş
 
     @FindBy(xpath = "(//ms-edit-button)[1]")
@@ -94,7 +102,8 @@ public class DialogContent extends Parent {
             case "deleteDialogBtn": myElement = deleteDialogBtn;break;
             case "acceptCookies": myElement = acceptCookies;break;
             case "editButton": myElement = editButton;break;
-
+            case "stage": myElement = stage;break;
+            case "stageSlct": myElement = stageSlct;break;
         }
         clickFunction(myElement);
     }
@@ -122,12 +131,16 @@ public class DialogContent extends Parent {
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
         wait.until(ExpectedConditions.textToBe(By.cssSelector("div[fxlayoutalign='center center'][class='control-full']"), "Search"));
 
+
         // waitUntilLoading();//son çözüm parent in içinde
         //GWD.Bekle(5);//
 
         findAndClick("deleteButton");
-        GWD.Bekle(2);
         findAndClick("deleteDialogBtn");
+        GWD.Bekle(5);
+
+
+
 
     }
 

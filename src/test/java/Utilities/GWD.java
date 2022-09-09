@@ -70,7 +70,11 @@ public class GWD {
     }
 
     public static void quitDriver() {
-
+        try {
+            Thread.sleep( 5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         if (threadDriver.get() != null) { // driver varsa
             threadDriver.get().quit();
 
