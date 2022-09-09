@@ -65,8 +65,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement successMessage;
 
-    @FindBy(xpath = "(//ms-edit-button[@class='ng-star-inserted'])[1]")
-    private WebElement editbtn;
+
 
 
     WebElement myElement;
@@ -74,18 +73,10 @@ public class DialogContent extends Parent {
     public void findAndSend(String strElement, String value) {  // 2.aşama
         // burda string isimden weblemente ulaşıcam
         switch (strElement) {
-            case "username":
-                myElement = username;
-                break;
-            case "password":
-                myElement = password;
-                break;
-            case "nameInput":
-                myElement = nameInput;
-                break;
-            case "searchInput":
-                myElement = searchInput;
-                break;
+            case "username": myElement = username;break;
+            case "password": myElement = password;break;
+            case "nameInput": myElement = nameInput;break;
+            case "searchInput": myElement = searchInput;break;
         }
 
         sendKeysFunction(myElement, value);
@@ -95,30 +86,14 @@ public class DialogContent extends Parent {
         // burda string isimden weblemente ulaşıcam
 
         switch (strElement) {
-            case "loginButton":
-                myElement = loginButton;
-                break;
-            case "addButton":
-                myElement = addButton;
-                break;
-            case "saveButton":
-                myElement = saveButton;
-                break;
-            case "searchButton":
-                myElement = searchButton;
-                break;
-            case "deleteButton":
-                myElement = deleteButton;
-                break;
-            case "deleteDialogBtn":
-                myElement = deleteDialogBtn;
-                break;
-            case "acceptCookies":
-                myElement = acceptCookies;
-                break;
-            case "editbtn":
-                myElement = editbtn;
-                break;
+            case "loginButton": myElement = loginButton;break;
+            case "addButton": myElement = addButton;break;
+            case "saveButton": myElement = saveButton;break;
+            case "searchButton": myElement = searchButton;break;
+            case "deleteButton": myElement = deleteButton;break;
+            case "deleteDialogBtn": myElement = deleteDialogBtn;break;
+            case "acceptCookies": myElement = acceptCookies;break;
+            case "editButton": myElement = editButton;break;
 
         }
         clickFunction(myElement);
@@ -128,12 +103,8 @@ public class DialogContent extends Parent {
         // burda string isimden weblemente ulaşıcam
 
         switch (strElement) {
-            case "dashboard":
-                myElement = dashboard;
-                break;
-            case "successMessage":
-                myElement = successMessage;
-                break;
+            case "dashboard": myElement = dashboard;break;
+            case "successMessage": myElement = successMessage;break;
 
         }
         verifyContainsText(myElement, text);
