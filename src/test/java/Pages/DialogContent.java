@@ -32,7 +32,7 @@ public class DialogContent extends Parent {
     private WebElement dashboard;
 
     // 2.giriş
-    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
     private WebElement addButton;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
@@ -60,9 +60,19 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//mat-pseudo-checkbox[@class='mat-pseudo-checkbox mat-option-pseudo-checkbox ng-star-inserted'])[5]")
     private WebElement stageSlct;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']")
+    private WebElement code;
 
-    //(//mat-pseudo-checkbox[@class='mat-pseudo-checkbox mat-option-pseudo-checkbox ng-star-inserted'])[1]
-    //4 ncü giriş
+    @FindBy(xpath = "//*[@class='mat-select-value ng-tns-c93-609']")
+    private WebElement fieldtype;
+
+    @FindBy(xpath = "//span[contains(text(),'Number')]")
+    private WebElement fieldbtn;
+
+
+
+
+   // //*[@class='mat-select-value ng-tns-c93-609']
 
     @FindBy(xpath = "(//ms-edit-button)[1]")
     private WebElement editButton;
@@ -85,6 +95,7 @@ public class DialogContent extends Parent {
             case "password": myElement = password;break;
             case "nameInput": myElement = nameInput;break;
             case "searchInput": myElement = searchInput;break;
+            case "code": myElement = code;break;
         }
 
         sendKeysFunction(myElement, value);
@@ -104,6 +115,7 @@ public class DialogContent extends Parent {
             case "editButton": myElement = editButton;break;
             case "stage": myElement = stage;break;
             case "stageSlct": myElement = stageSlct;break;
+
         }
         clickFunction(myElement);
     }

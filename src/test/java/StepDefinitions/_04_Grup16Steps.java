@@ -35,9 +35,11 @@ public class _04_Grup16Steps extends Parent {
         dc.findAndClick("stage");
         dc.findAndClick("stageSlct");
 
-       Robot stage=new Robot();
-       stage.keyPress(KeyEvent.VK_ESCAPE);
-       stage.keyRelease(KeyEvent.VK_ESCAPE);
+    //    Robot stage=new Robot();
+    //    stage.keyPress(KeyEvent.VK_ESCAPE);
+    //    stage.keyRelease(KeyEvent.VK_ESCAPE);
+//
+        dc.findAndClick("saveButton");
 
 
     }
