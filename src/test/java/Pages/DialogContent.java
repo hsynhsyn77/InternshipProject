@@ -17,6 +17,7 @@ public class DialogContent extends Parent {
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
+
     //1 nci giriş
     @FindBy(id = "mat-input-0")
     private WebElement username;
@@ -30,7 +31,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//span[contains(text(),'Dashboard')])[2]")
     private WebElement dashboard;
 
-// 2.giriş
+    // 2.giriş
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
     private WebElement addButton;
 
@@ -47,8 +48,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-search-button//button")
     private WebElement searchButton;
 
-    @FindBy(xpath = "(//button[@type='submit']//span)[1]")
-    private WebElement deleteDialogButton;
+    @FindBy(xpath = "//span[contains(text(),'Delete')]")
+    private WebElement deleteDialogBtn;
 
     @FindBy(xpath = "(//ms-delete-button//button)[1]")
     private WebElement deleteButton;
@@ -68,18 +69,24 @@ public class DialogContent extends Parent {
     private WebElement editbtn;
 
 
-
-
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {  // 2.aşama
         // burda string isimden weblemente ulaşıcam
         switch (strElement) {
-            case "username": myElement = username;break;
-            case "password": myElement = password;break;
-            case "nameInput": myElement = nameInput;break;
-            case "searchInput": myElement = searchInput;break;
-                   }
+            case "username":
+                myElement = username;
+                break;
+            case "password":
+                myElement = password;
+                break;
+            case "nameInput":
+                myElement = nameInput;
+                break;
+            case "searchInput":
+                myElement = searchInput;
+                break;
+        }
 
         sendKeysFunction(myElement, value);
     }
@@ -88,14 +95,30 @@ public class DialogContent extends Parent {
         // burda string isimden weblemente ulaşıcam
 
         switch (strElement) {
-            case "loginButton": myElement = loginButton;break;
-            case "addButton": myElement = addButton;break;
-            case "saveButton":myElement = saveButton;break;
-            case "searchButton":myElement = searchButton;break;
-            case "deleteButton":myElement = deleteButton;break;
-            case "deleteDialogButton":myElement = deleteDialogButton;break;
-            case "acceptCookies":myElement = acceptCookies;break;
-            case "editbtn":myElement = editbtn;break;
+            case "loginButton":
+                myElement = loginButton;
+                break;
+            case "addButton":
+                myElement = addButton;
+                break;
+            case "saveButton":
+                myElement = saveButton;
+                break;
+            case "searchButton":
+                myElement = searchButton;
+                break;
+            case "deleteButton":
+                myElement = deleteButton;
+                break;
+            case "deleteDialogBtn":
+                myElement = deleteDialogBtn;
+                break;
+            case "acceptCookies":
+                myElement = acceptCookies;
+                break;
+            case "editbtn":
+                myElement = editbtn;
+                break;
 
         }
         clickFunction(myElement);
@@ -105,8 +128,12 @@ public class DialogContent extends Parent {
         // burda string isimden weblemente ulaşıcam
 
         switch (strElement) {
-            case "dashboard": myElement = dashboard;break;
-            case "successMessage" : myElement =successMessage; break;
+            case "dashboard":
+                myElement = dashboard;
+                break;
+            case "successMessage":
+                myElement = successMessage;
+                break;
 
         }
         verifyContainsText(myElement, text);
@@ -121,18 +148,16 @@ public class DialogContent extends Parent {
         // WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
         // wait.until(ExpectedConditions.stalenessOf(deleteButton));
 
-
-        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.textToBe(By.cssSelector("div[fxlayoutalign='center center'][class='control-full']"),"Search"));
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("div[fxlayoutalign='center center'][class='control-full']"), "Search"));
 
         // waitUntilLoading();//son çözüm parent in içinde
-        // GWD.Bekle(10);//
+        //GWD.Bekle(5);//
 
         findAndClick("deleteButton");
-        GWD.Bekle(3);
-        findAndClick("deleteDialogButton");
+        GWD.Bekle(2);
+        findAndClick("deleteDialogBtn");
 
     }
-
 
 }

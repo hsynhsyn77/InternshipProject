@@ -7,7 +7,7 @@ Feature: Human Resource Functionality
 
   Scenario Outline: Human Resource
     And Click on the element in the left Nav
-    And Create on the name as "<name>"
+   # And Create on the name as "<name>"
     And User delete "<name>"
 
     Examples:
