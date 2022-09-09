@@ -12,7 +12,7 @@ Feature: Human Resource Functionality
 
     Examples:
       | name    |
-      | group20 |
+      | example1 |
 
 
 
