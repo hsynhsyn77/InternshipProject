@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.Locale;
 
 public class Parent {
     public void sendKeysFunction(WebElement element, String value) {//3.Aşama

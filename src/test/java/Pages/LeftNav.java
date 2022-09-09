@@ -4,11 +4,24 @@ import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LeftNav extends Parent {
     public LeftNav() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
+
+    @FindBy(xpath = "//span[text()='Human Resources']")
+    private WebElement HumanResources;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[3]")
+    private WebElement getSetup3;
+
+    @FindBy(xpath = "//span[text()='Position Categories']")
+    private WebElement PositionCategories;
+
+
+
 
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
     private WebElement setupOne;
@@ -19,11 +32,6 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "(//span[text()='Document Types'])[1]")
     private WebElement DocumentTypes;
 
-    @FindBy(xpath = "//span[text()='Human Resources']")
-    private WebElement HumanResources;
-
-    @FindBy(xpath = "(//span[text()='Setup'])[3]")
-    private WebElement getSetup3;
 
     @FindBy(xpath = "//span[text()='Attestations']")
     private WebElement Attestations;
@@ -70,11 +78,14 @@ public class LeftNav extends Parent {
     public void findAndClick(String strElement) {  // 2.aşama
         // burda string isimden weblemente ulaşıcam
         switch (strElement) {
+
+            case "HumanResources": myElement = HumanResources;break;
+            case "getSetup3": myElement = getSetup3;break;
+            case "PositionCategories": myElement = PositionCategories;break;
+
             case "setupOne": myElement = setupOne;break;
             case "parameters": myElement = parameters;break;
             case "DocumentTypes": myElement = DocumentTypes;break;
-            case "HumanResources": myElement = HumanResources;break;
-            case "getSetup3": myElement = getSetup3;break;
             case "Attestations": myElement = Attestations;break;
             case "Fields": myElement = Fields;break;
             case "Positions": myElement = Positions;break;
