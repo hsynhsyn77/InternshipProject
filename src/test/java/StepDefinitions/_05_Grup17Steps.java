@@ -4,6 +4,7 @@ import Pages.DialogContent;
 import Pages.FormContent;
 import Pages.LeftNav;
 import Pages.Parent;
+import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
@@ -16,13 +17,14 @@ public class _05_Grup17Steps extends Parent {
     FormContent fc = new FormContent();
 
 
-
-    @And("Create a field {string},{string}")
+    @And("Create a field {string} , {string}")
     public void createAfield(String name, String code) {
         dc.findAndClick("addButton");
-        dc.findAndSend("nameInput",name);
-        dc.findAndSend("code",code);
-
+        dc.findAndSend("nameInput", name);
+        dc.findAndSend("code1", code);
+        dc.findAndClick("fieldtype");
+        dc.findAndClick("fieldbtn");
+        dc.findAndClick("saveButton");
 
     }
 
@@ -35,12 +37,6 @@ public class _05_Grup17Steps extends Parent {
 
     }
 
-    @And("Select the field type")
-    public void selectTheFieldType() {
-        dc.findAndClick("fieldtype");
-        dc.findAndClick("fieldbtn");
-
-    }
 
     @When("Edit the fields {string} change {string}")
     public void editTheFieldsChange(String name, String name2) {

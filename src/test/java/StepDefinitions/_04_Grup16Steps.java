@@ -25,7 +25,7 @@ public class _04_Grup16Steps extends Parent {
 
     @And("Create a Document {string}")
     public void createADocument(String name) {
-        dc.findAndClick("addButton");
+        dc.findAndClick("addButton16"); //en son eklenen
         dc.findAndSend("nameInput",name);
 
     }

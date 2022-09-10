@@ -8,11 +8,10 @@ Feature: Fields
   Scenario Outline: Fields Steps
 
     And Click on the Fields in the left Nav
-    And Create a field "<name>","<code>"
-    And Select the field type
+    And Create a field "<name>" , "<code>"
     When Edit the fields "<name>" change "<name2>"
     Then User delete "<name>"
 
     Examples:
       | name   | name2      | code |
-      | grup20 | grup20edit | 34343|
+      | grup20 | grup20edit | 1234 |

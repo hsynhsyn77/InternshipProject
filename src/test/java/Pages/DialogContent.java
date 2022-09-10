@@ -32,16 +32,21 @@ public class DialogContent extends Parent {
     private WebElement dashboard;
 
     // 2.giriş
-    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
+    @FindBy(xpath = "//*[@class='svg-inline--fa fa-plus']")
     private WebElement addButton;
 
+    @FindBy(xpath = "(//fa-icon[@class='ng-fa-icon'])[4]")
+    private WebElement addButton16;
+
+
+    //  (//fa-icon[@class='ng-fa-icon'])[4]
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     private WebElement nameInput;
 
     @FindBy(xpath = "(//span[contains(text(),'Stage')])[3]")
     private WebElement stage;
 
-    @FindBy(xpath = "//ms-save-button//button")
+    @FindBy(xpath = "//ms-save-button[@class='ng-star-inserted']")
     private WebElement saveButton;
 
     //3.giriş
@@ -60,10 +65,10 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//mat-pseudo-checkbox[@class='mat-pseudo-checkbox mat-option-pseudo-checkbox ng-star-inserted'])[5]")
     private WebElement stageSlct;
 
-    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']")
-    private WebElement code;
+    @FindBy(xpath = "(//input[@type='text'])[4]")
+    private WebElement code1;
 
-    @FindBy(xpath = "//*[@class='mat-select-value ng-tns-c93-609']")
+    @FindBy(xpath = "//mat-select[@formcontrolname='type']")
     private WebElement fieldtype;
 
     @FindBy(xpath = "//span[contains(text(),'Number')]")
@@ -72,7 +77,7 @@ public class DialogContent extends Parent {
 
 
 
-   // //*[@class='mat-select-value ng-tns-c93-609']
+
 
     @FindBy(xpath = "(//ms-edit-button)[1]")
     private WebElement editButton;
@@ -95,7 +100,7 @@ public class DialogContent extends Parent {
             case "password": myElement = password;break;
             case "nameInput": myElement = nameInput;break;
             case "searchInput": myElement = searchInput;break;
-            case "code": myElement = code;break;
+            case "code1": myElement = code1;break;
         }
 
         sendKeysFunction(myElement, value);
@@ -107,6 +112,7 @@ public class DialogContent extends Parent {
         switch (strElement) {
             case "loginButton": myElement = loginButton;break;
             case "addButton": myElement = addButton;break;
+            case "addButton16": myElement = addButton16;break;
             case "saveButton": myElement = saveButton;break;
             case "searchButton": myElement = searchButton;break;
             case "deleteButton": myElement = deleteButton;break;
@@ -115,6 +121,8 @@ public class DialogContent extends Parent {
             case "editButton": myElement = editButton;break;
             case "stage": myElement = stage;break;
             case "stageSlct": myElement = stageSlct;break;
+            case "fieldtype": myElement = fieldtype;break;// bunu yeni ekledim
+            case "fieldbtn": myElement = fieldbtn;break;// bunu yeni ekledim
 
         }
         clickFunction(myElement);
