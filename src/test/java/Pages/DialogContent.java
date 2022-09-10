@@ -14,7 +14,7 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 public class DialogContent extends Parent {
-    public DialogContent() {
+    public DialogContent()  {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
@@ -36,10 +36,11 @@ public class DialogContent extends Parent {
     private WebElement addButton;
 
     @FindBy(xpath = "(//fa-icon[@class='ng-fa-icon'])[4]")
-    private WebElement addButton16;
+    private WebElement addButton1;
 
+    @FindBy(xpath = "//ms-add-button[@table='true']")
+    private WebElement addButton2;
 
-    //  (//fa-icon[@class='ng-fa-icon'])[4]
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     private WebElement nameInput;
 
@@ -68,16 +69,26 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//input[@type='text'])[4]")
     private WebElement code1;
 
+    @FindBy(xpath = "(//input[@type='text'])[4]")
+    private WebElement code2;
+
+    @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.SHORTNAME']")
+    private WebElement shortName;
+
+    @FindBy(xpath = " (//mat-select[@role='combobox'])[3]")
+    private WebElement locationtype;
+
+    @FindBy(xpath = " (//span[@class='mat-option-text'])[1]")
+    private WebElement locationtypesec;
+
+    @FindBy(xpath = " //ms-integer-field[@formcontrolname='capacity']")
+    private WebElement capacity;
+
     @FindBy(xpath = "//mat-select[@formcontrolname='type']")
     private WebElement fieldtype;
 
     @FindBy(xpath = "//span[contains(text(),'Number')]")
     private WebElement fieldbtn;
-
-
-
-
-
 
     @FindBy(xpath = "(//ms-edit-button)[1]")
     private WebElement editButton;
@@ -93,7 +104,7 @@ public class DialogContent extends Parent {
 
     WebElement myElement;
 
-    public void findAndSend(String strElement, String value) {  // 2.aşama
+    public void findAndSend(String strElement, String value)  {  // 2.aşama
         // burda string isimden weblemente ulaşıcam
         switch (strElement) {
             case "username": myElement = username;break;
@@ -101,18 +112,21 @@ public class DialogContent extends Parent {
             case "nameInput": myElement = nameInput;break;
             case "searchInput": myElement = searchInput;break;
             case "code1": myElement = code1;break;
+            case "shortName": myElement = shortName;break;
+            case "capacity": myElement = capacity;break;
         }
 
         sendKeysFunction(myElement, value);
     }
 
-    public void findAndClick(String strElement) {  // 2.aşama
+    public void findAndClick(String strElement)  {  // 2.aşama
         // burda string isimden weblemente ulaşıcam
 
         switch (strElement) {
             case "loginButton": myElement = loginButton;break;
             case "addButton": myElement = addButton;break;
-            case "addButton16": myElement = addButton16;break;
+            case "addButton1": myElement = addButton1;break;
+            case "addButton2": myElement = addButton2;break;
             case "saveButton": myElement = saveButton;break;
             case "searchButton": myElement = searchButton;break;
             case "deleteButton": myElement = deleteButton;break;
@@ -121,14 +135,15 @@ public class DialogContent extends Parent {
             case "editButton": myElement = editButton;break;
             case "stage": myElement = stage;break;
             case "stageSlct": myElement = stageSlct;break;
-            case "fieldtype": myElement = fieldtype;break;// bunu yeni ekledim
-            case "fieldbtn": myElement = fieldbtn;break;// bunu yeni ekledim
+            case "fieldtype": myElement = fieldtype;break;
+            case "fieldbtn": myElement = fieldbtn;break;
+            case "locationtypesec": myElement = locationtypesec;break;
 
         }
         clickFunction(myElement);
     }
 
-    public void findAndContainsText(String strElement, String text) {  // 2.aşama
+    public void findAndContainsText(String strElement, String text)  {  // 2.aşama
         // burda string isimden weblemente ulaşıcam
 
         switch (strElement) {
@@ -140,7 +155,7 @@ public class DialogContent extends Parent {
     }
 
 
-    public void SearchAndDelete(String searchText) throws AWTException {
+    public void SearchAndDelete(String searchText) {
 
         findAndSend("searchInput", searchText);
         findAndClick("searchButton");

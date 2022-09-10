@@ -9,15 +9,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
 import java.time.Duration;
 
 public class FormContent extends Parent {
-    public FormContent() {
+    public FormContent()  {
         PageFactory.initElements(GWD.getDriver(), this);
     }
-
-
-
 
 
     @FindBy(xpath = "(//mat-select[@formcontrolname='id']/div/div)[1]")
@@ -54,7 +52,7 @@ public class FormContent extends Parent {
     WebElement myElement;
 
 
-    public void findAndClick(String strElement) {  // 2.aşama
+    public void findAndClick(String strElement)  {  // 2.aşama
         // burda string isimden weblemente ulaşıcam
         switch (strElement) {
             case "academicPeriod": myElement = academicPeriod;break;

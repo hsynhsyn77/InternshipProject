@@ -43,7 +43,7 @@ public class Hooks {
             File ekranDosyasi = screenshot.getScreenshotAs(OutputType.FILE);
 
             //extend report ekliyor
-           // ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot()); // yoksa browserlar kapamaz o yüzden kapattık
+            // ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot()); // yoksa browserlar kapamaz o yüzden kapattık
 
 
             try {

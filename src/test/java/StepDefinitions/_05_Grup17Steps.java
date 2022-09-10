@@ -13,8 +13,10 @@ import java.awt.*;
 public class _05_Grup17Steps extends Parent {
 
     LeftNav ln = new LeftNav();
-    DialogContent dc = new DialogContent();
+    DialogContent dc=new DialogContent();
     FormContent fc = new FormContent();
+
+
 
 
     @And("Create a field {string} , {string}")

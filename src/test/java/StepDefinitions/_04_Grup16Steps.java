@@ -4,6 +4,7 @@ import Pages.DialogContent;
 import Pages.FormContent;
 import Pages.LeftNav;
 import Pages.Parent;
+import Utilities.GWD;
 import io.cucumber.java.en.And;
 
 import java.awt.*;
@@ -35,10 +36,9 @@ public class _04_Grup16Steps extends Parent {
         dc.findAndClick("stage");
         dc.findAndClick("stageSlct");
 
-    //    Robot stage=new Robot();
-    //    stage.keyPress(KeyEvent.VK_ESCAPE);
-    //    stage.keyRelease(KeyEvent.VK_ESCAPE);
-//
+        // bu araya robot eklenmesi gerekli
+        // mac de ki komutları bulamadım
+
         dc.findAndClick("saveButton");
 
 

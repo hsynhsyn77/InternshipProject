@@ -11,15 +11,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.awt.*;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class _01_LoginSteps {
     DialogContent dc=new DialogContent();
 
-
     @Given("Navigate to basqar")
-    public void navigateToBasqar() {
+    public void navigateToBasqar(){
         GWD.getDriver().get("https://demo.mersys.io/");
         GWD.getDriver().manage().window().maximize();
     }
