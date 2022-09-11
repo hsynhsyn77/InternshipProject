@@ -8,9 +8,9 @@ Feature:School Categories
   Scenario Outline: School Categories
 
     And Click on the School in the left Nav
-    And Create a School "<name>" , "<shortName>", "<capacity>"
+    And Create a School "<name>" , "<shortName>" , "<capacity>"
     When Edit the School "<name>" change "<name2>"
-    Then User delete "<name>"
+
 
     Examples:
       | name   | name2      | shortName | capacity |

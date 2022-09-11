@@ -27,6 +27,8 @@ public class _05_Grup17Steps extends Parent {
         dc.findAndClick("fieldtype");
         dc.findAndClick("fieldbtn");
         dc.findAndClick("saveButton");
+        dc.findAndContainsText("successMessage","success");
+
 
     }
 
@@ -46,6 +48,7 @@ public class _05_Grup17Steps extends Parent {
         dc.findAndClick("editButton");
         dc.findAndSend("nameInput", name2);
         dc.findAndClick("saveButton");
+        dc.findAndContainsText("successMessage","success");
 
     }
 }

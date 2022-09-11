@@ -10,8 +10,8 @@ Feature: Fields
     And Click on the Fields in the left Nav
     And Create a field "<name>" , "<code>"
     When Edit the fields "<name>" change "<name2>"
-    Then User delete "<name>"
+    Then User delete "<name2>"
 
     Examples:
       | name   | name2      | code |
-      | grup20 | grup20edit | 1234 |
+      | grup200 | grup200edit | 1234 |

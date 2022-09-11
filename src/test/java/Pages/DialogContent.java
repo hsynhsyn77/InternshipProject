@@ -57,10 +57,13 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-search-button//button")
     private WebElement searchButton;
 
-    @FindBy(xpath = "//span[contains(text(),'Delete')]")
+    @FindBy(xpath = "(//span[@class='mat-button-wrapper'])[20]")
     private WebElement deleteDialogBtn;
 
-    @FindBy(xpath = "(//ms-delete-button//button)[1]")
+    @FindBy(xpath = "//span[contains(text(),'Delete')]")
+    private WebElement deleteDialogBtn2;
+
+    @FindBy(xpath = "//ms-delete-button[@class='ng-star-inserted']")
     private WebElement deleteButton;
 
     @FindBy(xpath = "(//mat-pseudo-checkbox[@class='mat-pseudo-checkbox mat-option-pseudo-checkbox ng-star-inserted'])[5]")
@@ -72,16 +75,19 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//input[@type='text'])[4]")
     private WebElement code2;
 
-    @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.SHORTNAME']")
+    @FindBy(xpath = "(//input[@aria-required='true'])[2]")
+    private WebElement code3;
+
+    @FindBy(xpath = "(//input[@type='text'])[2]")
     private WebElement shortName;
 
-    @FindBy(xpath = " (//mat-select[@role='combobox'])[3]")
-    private WebElement locationtype;
-
-    @FindBy(xpath = " (//span[@class='mat-option-text'])[1]")
+    @FindBy(xpath = "//span[contains(text(),'Laboratory')]")
     private WebElement locationtypesec;
 
-    @FindBy(xpath = " //ms-integer-field[@formcontrolname='capacity']")
+    @FindBy(xpath = "(//*[contains(@id,'mat-select')])[5]")
+    private WebElement locationtype;
+
+    @FindBy(xpath = " //ms-integer-field[@formcontrolname='capacity']//input")
     private WebElement capacity;
 
     @FindBy(xpath = "//mat-select[@formcontrolname='type']")
@@ -93,15 +99,24 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//ms-edit-button)[1]")
     private WebElement editButton;
 
+    @FindBy(xpath = "(//button[@color='accent'])[2]")
+    private WebElement editButton9;
+
     @FindBy(xpath = "(//button[@class='consent-give'])[1]")
     private WebElement acceptCookies;
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement successMessage;
 
+    @FindBy(xpath = "//div[@class='search-container']")
+    private WebElement school;
+
+    @FindBy(xpath = "(//mat-option[@role='option'])[1]")
+    private WebElement school2;
 
 
 
+//  (//mat-select[@role='combobox'])[1]
     WebElement myElement;
 
     public void findAndSend(String strElement, String value)  {  // 2.aşama
@@ -112,6 +127,7 @@ public class DialogContent extends Parent {
             case "nameInput": myElement = nameInput;break;
             case "searchInput": myElement = searchInput;break;
             case "code1": myElement = code1;break;
+            case "code3": myElement = code3;break;
             case "shortName": myElement = shortName;break;
             case "capacity": myElement = capacity;break;
         }
@@ -131,6 +147,7 @@ public class DialogContent extends Parent {
             case "searchButton": myElement = searchButton;break;
             case "deleteButton": myElement = deleteButton;break;
             case "deleteDialogBtn": myElement = deleteDialogBtn;break;
+            case "deleteDialogBtn2": myElement = deleteDialogBtn2;break;
             case "acceptCookies": myElement = acceptCookies;break;
             case "editButton": myElement = editButton;break;
             case "stage": myElement = stage;break;
@@ -138,6 +155,11 @@ public class DialogContent extends Parent {
             case "fieldtype": myElement = fieldtype;break;
             case "fieldbtn": myElement = fieldbtn;break;
             case "locationtypesec": myElement = locationtypesec;break;
+            case "locationtype": myElement = locationtype;break;
+            case "editButton9": myElement = editButton9;break;
+            case "school": myElement = school;break;
+            case "school2": myElement = school2;break;
+
 
         }
         clickFunction(myElement);

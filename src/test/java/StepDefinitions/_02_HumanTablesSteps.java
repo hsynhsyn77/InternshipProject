@@ -42,7 +42,7 @@ public class _02_HumanTablesSteps extends Parent {
     }
 
     @And("User delete {string}")
-    public void userDeleteThe(String arananKelime) throws AWTException {
+    public void userDeleteThe(String arananKelime)  {
         dc.SearchAndDelete(arananKelime);
     }
 }
