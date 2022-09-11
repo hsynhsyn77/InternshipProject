@@ -114,13 +114,20 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//mat-option[@role='option'])[1]")
     private WebElement school2;
 
+    @FindBy(xpath = "//input[@data-placeholder='IBAN']")
+    private WebElement IBAN;
 
+    @FindBy(xpath = "//mat-select[@formcontrolname='currency']")
+    private WebElement currency;
 
-//  (//mat-select[@role='combobox'])[1]
+    @FindBy(xpath = "//span[contains(text(),'USD')]")
+    private WebElement currencyUsd;
+
+    @FindBy(xpath = "(//input[@aria-required='true'])[3]")
+    private WebElement integrationCode;
+
     WebElement myElement;
-
     public void findAndSend(String strElement, String value)  {  // 2.aşama
-        // burda string isimden weblemente ulaşıcam
         switch (strElement) {
             case "username": myElement = username;break;
             case "password": myElement = password;break;
@@ -130,14 +137,14 @@ public class DialogContent extends Parent {
             case "code3": myElement = code3;break;
             case "shortName": myElement = shortName;break;
             case "capacity": myElement = capacity;break;
+            case "IBAN": myElement = IBAN;break;
+            case "integrationCode": myElement = integrationCode;break;
         }
 
         sendKeysFunction(myElement, value);
     }
 
     public void findAndClick(String strElement)  {  // 2.aşama
-        // burda string isimden weblemente ulaşıcam
-
         switch (strElement) {
             case "loginButton": myElement = loginButton;break;
             case "addButton": myElement = addButton;break;
@@ -159,6 +166,9 @@ public class DialogContent extends Parent {
             case "editButton9": myElement = editButton9;break;
             case "school": myElement = school;break;
             case "school2": myElement = school2;break;
+            case "currency": myElement = currency;break;
+            case "currencyUsd": myElement = currencyUsd;break;
+
 
 
         }
