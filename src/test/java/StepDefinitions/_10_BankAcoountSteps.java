@@ -34,14 +34,11 @@ public class _10_BankAcoountSteps extends Parent {
 
     @When("Edit the BankAccount {string} change {string}")
     public void editTheBankAccountChange(String name, String name2) {
+        dc.findAndSend("searchInput", name);
+        dc.findAndClick("searchButton");
         dc.findAndClick("editButton");
         dc.findAndSend("nameInput", name2);
         dc.findAndClick("saveButton");
-        dc.findAndContainsText("successMessage", "success");
-        dc.findAndSend("searchInput", name2);//searchButton
-        dc.findAndClick("searchButton");
-        dc.findAndClick("deleteButton");
-        dc.findAndClick("deleteDialogBtn");
         dc.findAndContainsText("successMessage", "success");
 
 

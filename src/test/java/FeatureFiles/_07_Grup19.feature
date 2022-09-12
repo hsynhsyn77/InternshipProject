@@ -15,3 +15,5 @@ Feature: Subject Categories
     Examples:
       | name   | name2      | code       |
       | grup20 | grup20edit | 1234343344 |
+
+        # tamamlandı çalışıyor

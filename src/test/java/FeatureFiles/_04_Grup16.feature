@@ -17,3 +17,5 @@ Feature: Document Types
     Examples:
       | name   |name2|
       | grup20 |grup20edit     |
+
+        # tamamlandı çalışıyor mac LER için robot komutu bulunacak

@@ -15,3 +15,5 @@ Feature: Human Positions
     Examples:
       | name   | name2      | shortName  |
       | grup20 | grup20edit | grup20oglu |
+
+        # tamamlandı çalışıyor

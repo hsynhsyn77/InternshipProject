@@ -21,9 +21,8 @@ public class _09_DepartmentsSteps {
 
     @And("Create a Departments {string} , {string}")
     public void createADepartments(String name, String code3) {
-        dc.findAndClick("school");
-        dc.findAndClick("school2");
-        dc.findAndClick("searchButton");
+        dc.findAndClick("schoolMenu");
+        dc.findAndClick("schoolSelect");
         dc.findAndClick("addButton");
         dc.findAndSend("nameInput", name);
         dc.findAndSend("code3", code3);
@@ -32,16 +31,10 @@ public class _09_DepartmentsSteps {
     }
     @When("Edit the Departments {string} change {string}")
     public void editTheDepartmentsChange(String name, String name2) {
-        dc.findAndClick("editButton9");
+        dc.findAndClick("editButton");
         dc.findAndSend("nameInput", name2);
         dc.findAndClick("saveButton");
         dc.findAndContainsText("successMessage", "success");
-        dc.findAndClick("deleteButton");
-        GWD.Bekle(2);
-        dc.findAndClick("deleteDialogBtn2");
-        GWD.Bekle(2);
-        dc.findAndContainsText("successMessage", "success");
-        GWD.Bekle(2);
 
     }
 }

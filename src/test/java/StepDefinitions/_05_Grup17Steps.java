@@ -28,10 +28,8 @@ public class _05_Grup17Steps extends Parent {
         dc.findAndClick("fieldbtn");
         dc.findAndClick("saveButton");
         dc.findAndContainsText("successMessage","success");
-
-
+        
     }
-
 
     @And("Click on the Fields in the left Nav")
     public void clickOnTheFieldsInTheLeftNav() {

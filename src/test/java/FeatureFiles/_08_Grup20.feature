@@ -15,3 +15,5 @@ Feature:School Categories
     Examples:
       | name   | name2      | shortName | capacity |
       | grup20 | grup20edit | grup20ler | 4        |
+
+        # tamamlandı çalışıyor

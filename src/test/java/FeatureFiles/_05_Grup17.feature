@@ -15,3 +15,5 @@ Feature: Fields
     Examples:
       | name   | name2      | code |
       | grup200 | grup200edit | 1234 |
+
+     # tamamlandı çalışıyor
