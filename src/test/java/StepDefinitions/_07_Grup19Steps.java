@@ -18,7 +18,7 @@ public class _07_Grup19Steps extends Parent {
 
     @And("Create a Subject {string} , {string}")
     public void createASubject(String name, String code2)  {
-        dc.findAndClick("addButton2");
+        dc.findAndClick("addButton");
         dc.findAndSend("nameInput", name);
         dc.findAndSend("code1", code2);
         dc.findAndClick("saveButton");

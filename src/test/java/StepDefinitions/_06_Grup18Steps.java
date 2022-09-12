@@ -40,7 +40,8 @@ public class _06_Grup18Steps extends Parent {
     @When("Edit the Positions {string} change {string}")
     public void editThePositionsChange(String name, String name2) throws AWTException {
         dc.findAndSend("searchInput", name);
-        dc.findAndClick("editButton");
+        dc.findAndClick("searchButton");
+        dc.findAndClick("editButton9");
         dc.findAndSend("nameInput", name2);
         dc.findAndClick("saveButton");
     }

@@ -24,7 +24,7 @@ public class _09_DepartmentsSteps {
         dc.findAndClick("school");
         dc.findAndClick("school2");
         dc.findAndClick("searchButton");
-        dc.findAndClick("addButton2");
+        dc.findAndClick("addButton");
         dc.findAndSend("nameInput", name);
         dc.findAndSend("code3", code3);
         dc.findAndClick("saveButton");

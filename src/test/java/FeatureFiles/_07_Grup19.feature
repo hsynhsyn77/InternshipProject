@@ -10,8 +10,8 @@ Feature: Subject Categories
     And Click on the Subject in the left Nav
     And Create a Subject "<name>" , "<code>"
     When Edit the Subject "<name>" change "<name2>"
-    Then User delete "<name>"
+    Then User delete "<name2>"
 
     Examples:
-      | name   | name2      | code |
-      | grup20 | grup20edit | 1234 |
+      | name   | name2      | code       |
+      | grup20 | grup20edit | 1234343344 |

@@ -14,7 +14,7 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 public class DialogContent extends Parent {
-    public DialogContent()  {
+    public DialogContent() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
@@ -32,14 +32,11 @@ public class DialogContent extends Parent {
     private WebElement dashboard;
 
     // 2.giriş
-    @FindBy(xpath = "//*[@class='svg-inline--fa fa-plus']")
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
     private WebElement addButton;
 
     @FindBy(xpath = "(//fa-icon[@class='ng-fa-icon'])[4]")
     private WebElement addButton1;
-
-    @FindBy(xpath = "//ms-add-button[@table='true']")
-    private WebElement addButton2;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     private WebElement nameInput;
@@ -47,24 +44,24 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//span[contains(text(),'Stage')])[3]")
     private WebElement stage;
 
-    @FindBy(xpath = "//ms-save-button[@class='ng-star-inserted']")
+    @FindBy(xpath = "//ms-save-button[@class='ng-star-inserted']//button")
     private WebElement saveButton;
 
     //3.giriş
     @FindBy(xpath = "(//div[contains(@class,'mat-form-field-infix ng-tns-c74')]//input)[1]")
     private WebElement searchInput;
 
-    @FindBy(xpath = "//ms-search-button//button")
+    @FindBy(xpath = "//div[@class='control-full']//button")
     private WebElement searchButton;
 
-    @FindBy(xpath = "(//span[@class='mat-button-wrapper'])[20]")
-    private WebElement deleteDialogBtn;
+    // @FindBy(xpath = "(//span[@class='mat-button-wrapper'])[20]")
+    //private WebElement deleteDialogBtn;
 
     @FindBy(xpath = "//span[contains(text(),'Delete')]")
     private WebElement deleteDialogBtn2;
 
-    @FindBy(xpath = "//ms-delete-button[@class='ng-star-inserted']")
-    private WebElement deleteButton;
+    // @FindBy(xpath = "//ms-delete-button[@class='ng-star-inserted']")
+    //private WebElement deleteButton;
 
     @FindBy(xpath = "(//mat-pseudo-checkbox[@class='mat-pseudo-checkbox mat-option-pseudo-checkbox ng-star-inserted'])[5]")
     private WebElement stageSlct;
@@ -96,11 +93,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[contains(text(),'Number')]")
     private WebElement fieldbtn;
 
-    @FindBy(xpath = "(//ms-edit-button)[1]")
+    @FindBy(xpath = "//ms-edit-button[@class='ng-star-inserted']//button")
     private WebElement editButton;
-
-    @FindBy(xpath = "(//button[@color='accent'])[2]")
-    private WebElement editButton9;
 
     @FindBy(xpath = "(//button[@class='consent-give'])[1]")
     private WebElement acceptCookies;
@@ -126,66 +120,162 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//input[@aria-required='true'])[3]")
     private WebElement integrationCode;
 
+    @FindBy(xpath = "//ms-delete-button[@class='ng-star-inserted']//button")
+    private WebElement deleteButton;
+
+    @FindBy(xpath = "//ms-text-field[@type='number']")
+    private WebElement order;
+
+    @FindBy(xpath = "//span[contains(text(),'Next Grade')]")
+    private WebElement NextGrade;
+
+    @FindBy(xpath = "//span[contains(text(),'Lhomas')]")
+    private WebElement NextGradesec;
+
+    @FindBy(xpath = "//div[@class='ng-star-inserted']//button[2]")//melih
+    private WebElement deleteDialogBtn;
+
+    @FindBy(xpath = "//ms-browse-search[@class='ng-star-inserted']//span//span")
+    private WebElement schoolMenu;
+
+    @FindBy(xpath = "//div[@class='cdk-overlay-container']//span")
+    private WebElement schoolSelect;
+
+
+    //  //div[@class='cdk-overlay-container']//span
     WebElement myElement;
-    public void findAndSend(String strElement, String value)  {  // 2.aşama
+    int intElement;
+
+    public void findAndSend(String strElement, String value) {  // 2.aşama
         switch (strElement) {
-            case "username": myElement = username;break;
-            case "password": myElement = password;break;
-            case "nameInput": myElement = nameInput;break;
-            case "searchInput": myElement = searchInput;break;
-            case "code1": myElement = code1;break;
-            case "code3": myElement = code3;break;
-            case "shortName": myElement = shortName;break;
-            case "capacity": myElement = capacity;break;
-            case "IBAN": myElement = IBAN;break;
-            case "integrationCode": myElement = integrationCode;break;
+            case "username":
+                myElement = username;
+                break;
+            case "password":
+                myElement = password;
+                break;
+            case "nameInput":
+                myElement = nameInput;
+                break;
+            case "searchInput":
+                myElement = searchInput;
+                break;
+            case "code1":
+                myElement = code1;
+                break;
+            case "code3":
+                myElement = code3;
+                break;
+            case "shortName":
+                myElement = shortName;
+                break;
+            case "capacity":
+                myElement = capacity;
+                break;
+            case "IBAN":
+                myElement = IBAN;
+                break;
+            case "integrationCode":
+                myElement = integrationCode;
+                break;
+            case "order":
+                intElement = Integer.parseInt(String.valueOf(order));
+                myElement = order;
+                break;
         }
+
 
         sendKeysFunction(myElement, value);
     }
 
-    public void findAndClick(String strElement)  {  // 2.aşama
+    public void findAndClick(String strElement) {  // 2.aşama
         switch (strElement) {
-            case "loginButton": myElement = loginButton;break;
-            case "addButton": myElement = addButton;break;
-            case "addButton1": myElement = addButton1;break;
-            case "addButton2": myElement = addButton2;break;
-            case "saveButton": myElement = saveButton;break;
-            case "searchButton": myElement = searchButton;break;
-            case "deleteButton": myElement = deleteButton;break;
-            case "deleteDialogBtn": myElement = deleteDialogBtn;break;
-            case "deleteDialogBtn2": myElement = deleteDialogBtn2;break;
-            case "acceptCookies": myElement = acceptCookies;break;
-            case "editButton": myElement = editButton;break;
-            case "stage": myElement = stage;break;
-            case "stageSlct": myElement = stageSlct;break;
-            case "fieldtype": myElement = fieldtype;break;
-            case "fieldbtn": myElement = fieldbtn;break;
-            case "locationtypesec": myElement = locationtypesec;break;
-            case "locationtype": myElement = locationtype;break;
-            case "editButton9": myElement = editButton9;break;
-            case "school": myElement = school;break;
-            case "school2": myElement = school2;break;
-            case "currency": myElement = currency;break;
-            case "currencyUsd": myElement = currencyUsd;break;
-
+            case "loginButton":
+                myElement = loginButton;
+                break;
+            case "addButton":
+                myElement = addButton;
+                break;
+            case "saveButton":
+                myElement = saveButton;
+                break;
+            case "searchButton":
+                myElement = searchButton;
+                break;
+            case "deleteButton":
+                myElement = deleteButton;
+                break;
+            case "deleteDialogBtn":
+                myElement = deleteDialogBtn;
+                break;
+            case "deleteDialogBtn2":
+                myElement = deleteDialogBtn2;
+                break;
+            case "acceptCookies":
+                myElement = acceptCookies;
+                break;
+            case "editButton":
+                myElement = editButton;
+                break;
+            case "stage":
+                myElement = stage;
+                break;
+            case "stageSlct":
+                myElement = stageSlct;
+                break;
+            case "fieldtype":
+                myElement = fieldtype;
+                break;
+            case "fieldbtn":
+                myElement = fieldbtn;
+                break;
+            case "locationtypesec":
+                myElement = locationtypesec;
+                break;
+            case "locationtype":
+                myElement = locationtype;
+                break;
+            case "school":
+                myElement = school;
+                break;
+            case "school2":
+                myElement = school2;
+                break;
+            case "currency":
+                myElement = currency;
+                break;
+            case "currencyUsd":
+                myElement = currencyUsd;
+                break;
+            case "NextGradesec":
+                myElement = NextGradesec;
+                break;
+            case "schoolMenu":
+                myElement = schoolMenu;
+                break;
+            case "schoolSelect":
+                myElement = schoolSelect;
+                break;
 
 
         }
         clickFunction(myElement);
     }
 
-    public void findAndContainsText(String strElement, String text)  {  // 2.aşama
+    public void findAndContainsText(String strElement, String text) {  // 2.aşama
         // burda string isimden weblemente ulaşıcam
 
         switch (strElement) {
-            case "dashboard": myElement = dashboard;break;
-            case "successMessage": myElement = successMessage;break;
+            case "dashboard":
+                myElement = dashboard;
+                break;
+            case "successMessage":
+                myElement = successMessage;
+                break;
 
         }
         verifyContainsText(myElement, text);
     }
-
 
     public void SearchAndDelete(String searchText) {
 
@@ -204,11 +294,14 @@ public class DialogContent extends Parent {
 
         findAndClick("deleteButton");
         findAndClick("deleteDialogBtn");
-        GWD.Bekle(5);
-
-
-
-
     }
 
+    public void justDelete(String searchText) {
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("div[fxlayoutalign='center center'][class='control-full']"), "Search"));
+
+        findAndClick("deleteButton");
+        findAndClick("deleteDialogBtn");
+
+    }
 }

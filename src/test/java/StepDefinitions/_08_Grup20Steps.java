@@ -6,6 +6,7 @@ import Pages.LeftNav;
 import Pages.Parent;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class _08_Grup20Steps extends Parent {
@@ -22,7 +23,9 @@ public class _08_Grup20Steps extends Parent {
 
     @And("Create a School {string} , {string} , {string}")
     public void createASchool(String name, String shortName, String capacity) {
-        dc.findAndClick("addButton2");
+        dc.findAndClick("schoolMenu");
+        dc.findAndClick("schoolSelect");
+        dc.findAndClick("addButton");
         dc.findAndSend("nameInput", name);
         dc.findAndSend("shortName", shortName);
         dc.findAndClick("locationtype");
@@ -39,12 +42,12 @@ public class _08_Grup20Steps extends Parent {
         dc.findAndClick("editButton");
         dc.findAndSend("nameInput", name2);
         dc.findAndClick("saveButton");
-        dc.findAndClick("deleteButton");
-        GWD.Bekle(3);
-        dc.findAndClick("deleteDialogBtn");
-        GWD.Bekle(3);
         dc.findAndContainsText("successMessage","success");
 
     }
 
+    @Then("User Just Delete {string}")
+    public void userJustDelete(String searchText) {
+        dc.justDelete(searchText);
+    }
 }
