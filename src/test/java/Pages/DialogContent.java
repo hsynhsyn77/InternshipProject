@@ -13,6 +13,8 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 
+import static Utilities.GWD.driver;
+
 public class DialogContent extends Parent {
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(), this);
@@ -35,8 +37,10 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
     private WebElement addButton;
 
-    @FindBy(xpath = "(//fa-icon[@class='ng-fa-icon'])[4]")
+    @FindBy(xpath = "//ms-add-button[@table='true']")
     private WebElement addButton1;
+
+    //  //ms-add-button[@table='true']
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     private WebElement nameInput;
@@ -69,8 +73,6 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//input[@type='text'])[4]")
     private WebElement code1;
 
-    @FindBy(xpath = "(//input[@type='text'])[4]")
-    private WebElement code2;
 
     @FindBy(xpath = "(//input[@aria-required='true'])[2]")
     private WebElement code3;
@@ -123,8 +125,11 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-delete-button[@class='ng-star-inserted']//button")
     private WebElement deleteButton;
 
-    @FindBy(xpath = "//ms-text-field[@type='number']")
+    @FindBy(xpath = "(//input[@aria-required='true'])[3]")
     private WebElement order;
+
+    @FindBy(xpath = "(//input[@aria-required='true'])[3]")
+    private WebElement order1;
 
     @FindBy(xpath = "//span[contains(text(),'Next Grade')]")
     private WebElement NextGrade;
@@ -141,130 +146,70 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//div[@class='cdk-overlay-container']//span")
     private WebElement schoolSelect;
 
+    @FindBy(xpath = "(//input[@type='text'])[3]")
+    private WebElement description;
 
-    //  //div[@class='cdk-overlay-container']//span
+    @FindBy(xpath = "(//input[@type='text'])[1]")
+    private WebElement description1;
+
+    //  //ms-text-field[@formcontrolname='description']
+
     WebElement myElement;
     int intElement;
-
     public void findAndSend(String strElement, String value) {  // 2.aşama
         switch (strElement) {
-            case "username":
-                myElement = username;
-                break;
-            case "password":
-                myElement = password;
-                break;
-            case "nameInput":
-                myElement = nameInput;
-                break;
-            case "searchInput":
-                myElement = searchInput;
-                break;
-            case "code1":
-                myElement = code1;
-                break;
-            case "code3":
-                myElement = code3;
-                break;
-            case "shortName":
-                myElement = shortName;
-                break;
-            case "capacity":
-                myElement = capacity;
-                break;
-            case "IBAN":
-                myElement = IBAN;
-                break;
-            case "integrationCode":
-                myElement = integrationCode;
-                break;
-            case "order":
-                intElement = Integer.parseInt(String.valueOf(order));
-                myElement = order;
-                break;
+            case "username": myElement = username;break;
+            case "password": myElement = password;break;
+            case "nameInput": myElement = nameInput;break;
+            case "searchInput": myElement = searchInput;break;
+            case "code1": myElement = code1;break;
+            case "code3": myElement = code3;break;
+            case "shortName": myElement = shortName;break;
+            case "capacity": myElement = capacity;break;
+            case "IBAN": myElement = IBAN;break;
+            case "integrationCode": myElement = integrationCode;break;
+            case "order": intElement = (Integer.parseInt(String.valueOf(order)));myElement = order;break;
+            case "description": myElement = description;break;
+            case "order1": myElement = order1;break;
+            case "description1": myElement = description1;break;
+
+
+
         }
-
-
         sendKeysFunction(myElement, value);
     }
-
     public void findAndClick(String strElement) {  // 2.aşama
         switch (strElement) {
-            case "loginButton":
-                myElement = loginButton;
-                break;
-            case "addButton":
-                myElement = addButton;
-                break;
-            case "saveButton":
-                myElement = saveButton;
-                break;
-            case "searchButton":
-                myElement = searchButton;
-                break;
-            case "deleteButton":
-                myElement = deleteButton;
-                break;
-            case "deleteDialogBtn":
-                myElement = deleteDialogBtn;
-                break;
-            case "deleteDialogBtn2":
-                myElement = deleteDialogBtn2;
-                break;
-            case "acceptCookies":
-                myElement = acceptCookies;
-                break;
-            case "editButton":
-                myElement = editButton;
-                break;
-            case "stage":
-                myElement = stage;
-                break;
-            case "stageSlct":
-                myElement = stageSlct;
-                break;
-            case "fieldtype":
-                myElement = fieldtype;
-                break;
-            case "fieldbtn":
-                myElement = fieldbtn;
-                break;
-            case "locationtypesec":
-                myElement = locationtypesec;
-                break;
-            case "locationtype":
-                myElement = locationtype;
-                break;
-            case "school":
-                myElement = school;
-                break;
-            case "school2":
-                myElement = school2;
-                break;
-            case "currency":
-                myElement = currency;
-                break;
-            case "currencyUsd":
-                myElement = currencyUsd;
-                break;
-            case "NextGradesec":
-                myElement = NextGradesec;
-                break;
-            case "schoolMenu":
-                myElement = schoolMenu;
-                break;
-            case "schoolSelect":
-                myElement = schoolSelect;
-                break;
+            case "loginButton": myElement = loginButton;break;
+            case "addButton": myElement = addButton;break;
+            case "addButton1": myElement = addButton1;break;
+            case "saveButton": myElement = saveButton;break;
+            case "searchButton": myElement = searchButton;break;
+            case "deleteButton": myElement = deleteButton;break;
+            case "deleteDialogBtn": myElement = deleteDialogBtn;break;
+            case "deleteDialogBtn2": myElement = deleteDialogBtn2;break;
+            case "acceptCookies": myElement = acceptCookies;break;
+            case "editButton": myElement = editButton;break;
+            case "stage": myElement = stage;break;
+            case "stageSlct": myElement = stageSlct;break;
+            case "fieldtype": myElement = fieldtype;break;
+            case "fieldbtn": myElement = fieldbtn;break;
+            case "locationtypesec": myElement = locationtypesec;break;
+            case "locationtype": myElement = locationtype;break;
+            case "school": myElement = school;break;
+            case "school2": myElement = school2;break;
+            case "currency": myElement = currency;break;
+            case "currencyUsd": myElement = currencyUsd;break;
+            case "NextGradesec": myElement = NextGradesec;break;
+            case "schoolMenu": myElement = schoolMenu;break;
+            case "schoolSelect": myElement = schoolSelect;break;
+
 
 
         }
         clickFunction(myElement);
     }
-
     public void findAndContainsText(String strElement, String text) {  // 2.aşama
-        // burda string isimden weblemente ulaşıcam
-
         switch (strElement) {
             case "dashboard":
                 myElement = dashboard;
@@ -272,7 +217,6 @@ public class DialogContent extends Parent {
             case "successMessage":
                 myElement = successMessage;
                 break;
-
         }
         verifyContainsText(myElement, text);
     }

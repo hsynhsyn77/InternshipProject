@@ -18,7 +18,7 @@ public class _11_GradeLevelsSteps {
 
     @And("Create a GradeLevels {string} , {string} , {string}")
     public void createAGradeLevels(String name, String shortName, String order) {
-        dc.findAndClick("addButton");
+        dc.findAndClick("addButton1");
         dc.findAndSend("nameInput", name);
         dc.findAndSend("shortName", shortName);
         dc.findAndClick("order");

@@ -12,4 +12,5 @@ Feature:Parameters GradeLevels
 
     Examples:
       | name    | shortName       | order |
-      | grup200 | grup20shortName | 4      |
+      | grup200 | grup20shortName | 4     |
+                                  # String gönderiyoruz int e çevrilmesi gerek.
