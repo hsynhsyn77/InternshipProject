@@ -3,11 +3,10 @@ package StepDefinitions;
 import Pages.DialogContent;
 import Pages.LeftNav;
 import Pages.Parent;
-import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
-public class _10_BankAcoountSteps extends Parent {
+public class _10_Grup22Steps extends Parent {
 
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();

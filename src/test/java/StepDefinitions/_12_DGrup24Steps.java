@@ -4,7 +4,7 @@ import Pages.DialogContent;
 import Pages.LeftNav;
 import io.cucumber.java.en.And;
 
-public class _12_DiscountsSteps {
+public class _12_DGrup24Steps {
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
 

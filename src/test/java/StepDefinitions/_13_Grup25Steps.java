@@ -1,35 +1,30 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import Pages.FormContent;
 import Pages.LeftNav;
-import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
-public class _09_DepartmentsSteps {
+public class _13_Grup25Steps {
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
-    FormContent fc = new FormContent();
 
-    @And("Click on the Departments in the left Nav")
-    public void clickOnTheDepartmentsInTheLeftNav() {
+    @And("Click on the Nationalities in the left Nav")
+    public void clickOnTheGradeLevelsInTheLeftNav() {
         ln.findAndClick("setupOne");
-        ln.findAndClick("SchoolSetup");
-        ln.findAndClick("Departments");
+        ln.findAndClick("parameters");
+        ln.findAndClick("Nationalities");
     }
 
-    @And("Create a Departments {string} , {string}")
-    public void createADepartments(String name, String code3) {
-        dc.findAndClick("schoolMenu");
-        dc.findAndClick("schoolSelect");
-        dc.findAndClick("addButton");
+
+    @And("Create a Nationalities {string}")
+    public void createANationalities(String name) {
+        dc.findAndClick("addButton1");
         dc.findAndSend("nameInput", name);
-        dc.findAndSend("code3", code3);
         dc.findAndClick("saveButton");
         dc.findAndContainsText("successMessage", "success");
     }
-    @When("Edit the Departments {string} change {string}")
+    @When("Edit the Nationalities {string} change {string}")
     public void editTheDepartmentsChange(String name, String name2) {
         dc.findAndClick("editButton");
         dc.findAndSend("nameInput", name2);
@@ -37,4 +32,6 @@ public class _09_DepartmentsSteps {
         dc.findAndContainsText("successMessage", "success");
 
     }
+
 }
+

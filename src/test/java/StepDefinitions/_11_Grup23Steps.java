@@ -3,9 +3,8 @@ package StepDefinitions;
 import Pages.DialogContent;
 import Pages.LeftNav;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.When;
 
-public class _11_GradeLevelsSteps {
+public class _11_Grup23Steps {
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
 
