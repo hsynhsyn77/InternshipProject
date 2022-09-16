@@ -18,6 +18,7 @@ import static Utilities.GWD.driver;
 public class DialogContent extends Parent {
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(), this);
+
     }
 
     //1 nci giriş

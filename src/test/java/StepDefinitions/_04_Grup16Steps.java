@@ -7,7 +7,10 @@ import Pages.Parent;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v85.indexeddb.model.Key;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -17,6 +20,7 @@ import java.awt.event.KeyEvent;
 import static Utilities.GWD.driver;
 
 public class _04_Grup16Steps extends Parent {
+    Actions aksiyonlar=new Actions(GWD.getDriver());
 
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
@@ -41,7 +45,13 @@ public class _04_Grup16Steps extends Parent {
     public void selectStage() throws AWTException {
       dc.findAndClick("stage");
       dc.findAndClick("stageSlct");
-      dc.findAndClick("boslukClick");
+
+
+        aksiyonlar.sendKeys(Keys.TAB).perform();
+
+
+
+
 
 
 

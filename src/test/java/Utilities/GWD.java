@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.util.Locale;
@@ -34,6 +35,8 @@ public class GWD {
 
         Logger.getLogger("").setLevel(Level.SEVERE);
         System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
+
+
 
         if (threadBrowserName.get() == null)//paralel çalışmayan XMl den parametreyle gelmeyen geri çağıran.
             threadBrowserName.set("chrome");// basic arayanlar için.
